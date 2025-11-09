@@ -19,6 +19,8 @@
         ".oaiusercontent.com",
         ".observeit.net",
         ".openai.com",
+        ".openai.org",
+        ".openai.com.cdn.cloudflare.net",
         ".azureedge.net",
         ".blob.core.windows.net",
         ".openaicom.imgix.net",
