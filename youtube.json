@@ -4,15 +4,21 @@
     {
       "domain": [
         "yt3.googleusercontent.com",
-        "googlevideo.com",
         "youtubei.googleapis.com",
         "youtubeembeddedplayer.googleapis.com",
         "youtube-ui.l.google.com",
         "wide-youtube.l.google.com",
+        "ytimg.com",
+        "googlevideo.com",
         "ggpht.com",
-        "ggpht.cn"
+        "ggpht.cn",
+        "youtube.googleapis.com"
       ],
-      "domain_keyword": "youtube"
+      "domain_suffix": [
+        ".youtube",
+        ".youtube.*",
+        ".yt.be"
+      ]
     }
   ]
 }
