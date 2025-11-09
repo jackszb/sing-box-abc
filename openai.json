@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        ".ai.com",
+        ".algolia.net",
+        ".statsig.com",
+        ".auth0.com",
+        ".chatgpt.com",
+        ".livekit.cloud",
+        ".arkoselabs.com",
+        ".featuregates.org",
+        ".identrust.com",
+        ".intercom.io",
+        ".intercomcdn.com",
+        ".launchdarkly.com",
+        ".oaistatic.com",
+        ".oaiusercontent.com",
+        ".observeit.net",
+        ".openai.com",
+        ".azureedge.net",
+        ".blob.core.windows.net",
+        ".openaicom.imgix.net",
+        ".segment.io",
+        ".sentry.io",
+        ".stripe.com"
+      ],
+      "domain_keyword": ["openai"]
+    }
+  ]
+}
