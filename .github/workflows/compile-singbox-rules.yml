@@ -16,28 +16,28 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5  # 检出代码，准备进行编译
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0  # 确保检出完整历史
 
       - name: Set up Go
-        uses: actions/setup-go@v4  # 设置 Go 环境
+        uses: actions/setup-go@v4
         with:
           go-version: 1.25.3  # 使用最新的 Go 版本
 
       - name: Install sing-box
         run: |
-          curl -fsSL https://sing-box.app/install.sh | sh -s -- --beta  # 使用 curl 安装 sing-box
-
-      - name: Check sing-box version
-        run: sing-box --version  # 验证 sing-box 是否安装成功
+          curl -fsSL https://sing-box.app/install.sh | sh  # 直接通过 curl 安装 sing-box
 
       - name: Compile all JSON -> SRS
         run: |
           set -euo pipefail
+          # 查找并编译所有 .json 文件为 .srs 文件
           find . -type f -name "*.json" | while IFS= read -r jsonfile; do
             out="${jsonfile%.json}.srs"
             echo "Compiling: $jsonfile -> $out"
             sing-box rule-set compile --output "$out" "$jsonfile"
-          done  # 查找并编译所有 .json 文件为 .srs 文件
+          done
 
       - name: Commit and push changes (if any)
         env:
