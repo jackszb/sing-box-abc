@@ -1,0 +1,57 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain": [
+        "instant.arubanetworks.com",
+        "setmeup.arubanetworks.com",
+        "asusrouter.com",
+        "router.asus.com",
+        "www.asusrouter.com",
+        "oasisauth.h3c.com",
+        "routerlogin.com",
+        "www.routerlogin.com",
+        "tplogin.cn",
+        "miwifi.com",
+        "www.miwifi.com",
+        "zte.home",
+        "my.router",
+        "ts.net",
+        "home.arpa",
+        "hiwifi.com",
+        "tplinkwifi.net",
+        "tendawifi.com",
+        "leike.cc",
+        "plex.direct",
+        "router.ctc",
+        "phicomm.me",
+        "peiluyou.com",
+        "localhost.ptlogin2.qq.com",
+        "localhost.sec.qq.com"
+      ],
+      "domain_suffix": [
+        ".internal",
+        ".localdomain",
+        ".example",
+        ".invalid",
+        ".localhost",
+        ".test",
+        ".local",
+        ".lan",
+        ".zte.home",
+        ".my.router",
+        ".ts.net",
+        ".home.arpa",
+        ".hiwifi.com",
+        ".tplinkwifi.net",
+        ".tendawifi.com",
+        ".leike.cc",
+        ".plex.direct",
+        ".router.ctc",
+        ".phicomm.me",
+        ".peiluyou.com"
+      ],
+      "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+    }
+  ]
+}
