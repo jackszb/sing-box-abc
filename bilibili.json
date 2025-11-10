@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_regex": [
+        "^.*\\.bilibili\\.com$",
+        "^api\\.bilibili\\.com$",
+        "^api\\.global\\.bilibili\\.com$",
+        "^api\\.live\\.bilibili\\.com$",
+        "^live\\.bilibili\\.com$",
+        "^video\\.bilibili\\.com$",
+        "^player\\.bilibili\\.com$",
+        "^space\\.bilibili\\.com$",
+        "^shop\\.bilibili\\.com$",
+        "^comment\\.bilibili\\.com$",
+        "^chat\\.bilibili\\.com$",
+        "^broadcast-.*\\.bilibili\\.com$",
+        "^account-.*\\.bilibili\\.com$",
+        "^captcha\\.bilibili\\.com$",
+        "^m\\.bilibili\\.com$",
+        "^pixiv\\.bilibili\\.com$",
+        "^yoo\\.bilibili\\.com$",
+        "^bangumi\\.bilibili\\.com$",
+        "^livecmt-.*\\.bilibili\\.com$",
+        "^s\\.search\\.bilibili\\.com$",
+        "^static-.*\\.bilibili\\.com$",
+        "^partner\\.bilibili\\.com$"
+      ]
+    }
+  ]
+}
