@@ -1,0 +1,50 @@
+name: Compile sing-box rule sets
+
+on:
+  workflow_dispatch:  # 手动触发工作流
+  push:
+    branches:
+      - '**'  # 监听所有分支的推送事件
+  schedule:
+    - cron: "30 22 * * *"  # 每天 22:30（上海时间）自动触发
+
+jobs:
+  compile:
+    permissions:
+      contents: write  # 允许工作流修改仓库内容
+    runs-on: ubuntu-latest  # 在 Ubuntu 环境中运行工作流
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5  # 检出代码，准备进行编译
+
+      - name: Set up Go
+        uses: actions/setup-go@v4  # 设置 Go 环境
+        with:
+          go-version: 1.25.3  # 使用最新的 Go 版本
+
+      - name: Install sing-box
+        run: |
+          curl -fsSL https://sing-box.app/install.sh | sh -s -- --beta  # 使用 curl 安装 sing-box
+
+      - name: Check sing-box version
+        run: sing-box --version  # 验证 sing-box 是否安装成功
+
+      - name: Compile all JSON -> SRS
+        run: |
+          set -euo pipefail
+          find . -type f -name "*.json" | while IFS= read -r jsonfile; do
+            out="${jsonfile%.json}.srs"
+            echo "Compiling: $jsonfile -> $out"
+            sing-box rule-set compile --output "$out" "$jsonfile"
+          done  # 查找并编译所有 .json 文件为 .srs 文件
+
+      - name: Commit and push changes (if any)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 自动使用 GitHub 提供的令牌进行操作
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "ci: compile sing-box rule-sets (.srs)" || echo "No changes"
+          git push  # 如果有变更，提交并推送回仓库
