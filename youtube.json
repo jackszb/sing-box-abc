@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        ".youtube.com",
+        ".youtu.be",
+        ".youtube-nocookie.com",
+        ".ytimg.com",
+        ".googlevideo.com",
+        ".youtubekids.com",
+        ".youtube.co",
+        ".yt.be",
+        ".youtubeeducation.com",
+        ".youtube",
+        ".youtube.*"
+      ],
+      "domain_keyword": [
+        "youtube",
+        "youtu",
+        "googlevideo"
+      ],
+      "domain": [
+        "yt3.googleusercontent.com",
+        "youtubei.googleapis.com",
+        "youtubeembeddedplayer.googleapis.com",
+        "youtube-ui.l.google.com",
+        "wide-youtube.l.google.com",
+        "ytimg.com",
+        "googlevideo.com",
+        "ggpht.com",
+        "ggpht.cn",
+        "youtube.googleapis.com"
+      ]
+    }
+  ]
+}
